@@ -2,6 +2,7 @@ import { Client } from 'pg';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 
+
 dotenv.config();
 
 const client = new Client({
@@ -15,7 +16,7 @@ export async function GET() {
     const result = await client.query('SELECT * FROM tbl_users');
     return new Response(JSON.stringify(result.rows), {
       status: 200,
-      headers: { 'Access-Control-Allow-Origin': '*',"Content-Type"  "application/json" },
+      headers: { 'Access-Control-Allow-Origin': '*',"Content-Type": "application/json" },
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: "Internal Server Error" }), {
