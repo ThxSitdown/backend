@@ -14,7 +14,7 @@ export default function Page() {
     const res = await fetch('http://localhost:3000/api/users', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Accept : 'application/json',
       },
       body: JSON.stringify({ firstname, lastname, username, password }),
     });
